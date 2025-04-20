@@ -33,19 +33,6 @@
 void ITM_Print(const char *itmMessage);
 
 /**
- * @brief Returns a timestamp string for log messages.
- *
- * Format: "HH:MM:SS:MMM: ".
- * - In FreeRTOS, timestamps reflect the system tick (assumes 1 kHz tick rate).
- * - In bare-metal or before the RTOS starts, a fixed placeholder is returned: "00:00:00:000: ".
- *
- * @return Pointer to a static, null-terminated timestamp string.
- *
- * @note Used internally by ITM_Error() and ITM_Event(). User code should not call this directly.
- */
-char *getTimeStamp();
-
-/**
  * @brief Sends a timestamped error message over ITM.
  *
  * The message is prefixed with a timestamp and an "ERROR: " tag.
